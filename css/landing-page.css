@@ -1,3 +1,6 @@
+:root{
+    --heading-height: 33.24rem;
+}
 /*----------------------------------- All header styling --------------------------------------*/
 
 @layer header{
@@ -7,6 +10,7 @@
 /*----------------------------------- H1 Styling (No bg-boxes just text and font-sizing) --------------------------------------*/
         h1{
             font-size: clamp(8.125rem, 20.536vw, 22.5rem);
+            position: relative;
 
             /*--- ALL WORDS ---*/
             & > span {
@@ -70,33 +74,41 @@
 
 /*----------------------------------- h1 Styling (No bg-boxes just text and font-sizing) --------------------------------------*/
 
-        div{
-            position: absolute;
-            left: 0;
+/*
+        .box-backgrounds{
+
+            height: var(--heading-height);
             width: 100%;
-        }
-
-        .heading-bg-square-1{
-            background-color: var(--heading-block-1-color);
-            z-index: -3;
+            position: absolute;
             top: 0;
-            height: 15%; 
+            left: 0;
 
-        }
+            *{
+                position: relative;
+            }
 
-        .heading-bg-square-2{
-            background-color: var(--main-block-color);
-            z-index: -1;
-            top: 15%; 
-            height: 28%; 
-        }
+            .heading-bg-square-1{
+                background-color: var(--heading-block-1-color);
+                z-index: -3;
+                top: 0;
+                height: 25.1%; 
 
-        .heading-bg-square-3{
-            z-index: -4;
-            background-color: var(--heading-block-3-color);
-            top: 43%; 
-            height: 25%; 
-        }
+            }
 
+            .heading-bg-square-2{
+                background-color: var(--main-block-color);
+                z-index: -1;
+                top: 16%; 
+                height: 28%; 
+            }
+
+            .heading-bg-square-3{
+                z-index: -4;
+                background-color: var(--heading-block-3-color);
+                top: 43%; 
+                height: 25%; 
+            }
+
+        } */
     }
 }
