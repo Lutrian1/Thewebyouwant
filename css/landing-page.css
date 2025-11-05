@@ -1,0 +1,102 @@
+/*----------------------------------- All header styling --------------------------------------*/
+
+@layer header{
+
+    header{
+
+/*----------------------------------- H1 Styling (No bg-boxes just text and font-sizing) --------------------------------------*/
+        h1{
+            font-size: clamp(8.125rem, 20.536vw, 22.5rem);
+
+            /*--- ALL WORDS ---*/
+            & > span {
+                display: grid;
+                grid-template-columns: subgrid;
+                grid-column: 1 / -1;
+            }
+
+                @media (min-width: 768px) {
+                    & > span:first-child,
+                    & > span:nth-child(2) {
+                        display: inline-block;
+                        grid-template-columns: none;
+                        width: auto;
+                        grid-column: auto;
+                    }
+                }
+
+            /*--- THE ---*/
+            span:first-child{
+                color: var(--word-the-color);
+                position: relative;
+                z-index: -2;
+            }
+            
+            /*--- WEB ---*/
+            span:nth-child(2){
+                text-align: left;
+                transform: translatex(10px) translatey(-18vw) rotate(-16deg);
+                @media (min-width: 768px) {
+                    transform: none;
+                }
+            }
+
+            /*--- YOU ---*/
+            span:nth-child(3){
+                font-size: clamp(9.125rem, 24.107vw, 25rem);
+                color: var(--word-you-color);
+                text-align: center;
+                transform: translatey(-7rem);
+
+                text-decoration-line: underline;
+                text-decoration-thickness: 20%;
+                text-underline-offset: -0rem;
+                text-decoration-skip-ink: none;
+
+            }
+
+            /*--- WANT ---*/
+            span:last-child{
+                font-size: clamp(6.75rem, 17.143vw, 18.75rem);
+                text-shadow: 0px -3vw 0px var(--word-want-shadow-color);
+                text-align: left;
+                transform: translatey(-10.8rem);
+                @media (min-width: 768px) {
+                    text-align: center;
+                }
+            }
+            
+        }
+
+/*----------------------------------- h1 Styling (No bg-boxes just text and font-sizing) --------------------------------------*/
+
+        div{
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+
+        .heading-bg-square-1{
+            background-color: var(--heading-block-1-color);
+            z-index: -3;
+            top: 0;
+            height: 15%; 
+
+        }
+
+        .heading-bg-square-2{
+            background-color: var(--main-block-color);
+            z-index: -1;
+            top: 15%; 
+            height: 28%; 
+        }
+
+        .heading-bg-square-3{
+            z-index: -4;
+            background-color: var(--heading-block-3-color);
+            top: 43%; 
+            height: 25%; 
+        }
+
+    }
+}
