@@ -162,6 +162,10 @@ html{
     @keyframes animation_text_eccentric_you{
         0% {
             text-shadow: 0 0 0 transparent; 
+            text-decoration-line: underline;
+            text-decoration-thickness: 0%;
+            text-underline-offset: -1rem;
+            text-decoration-skip-ink: none;
         }
 
         40% {
@@ -175,6 +179,11 @@ html{
         100% {
             text-shadow: 0 0 0 transparent; 
             -webkit-text-fill-color: var(--word-you-color);
+
+            text-decoration-line: underline;
+            text-decoration-thickness: 20%;
+            text-underline-offset: -0rem;
+            text-decoration-skip-ink: none;
         }
     }
 
