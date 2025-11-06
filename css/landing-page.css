@@ -41,12 +41,23 @@
                 color: var(--word-the-color);
                 position: relative;
                 z-index: -2;
+                
+                /*----------------------------------- ANIMATION --------------------------------------*/
+                -webkit-text-fill-color: transparent;
+                animation: animation_text_reveal_up_the  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
+                animation-delay: var(--animation_duration_left_to_right);
             }
             
             /*--- WEB ---*/
             span:nth-child(2){
                 text-align: left;
                 transform: translatex(10px) translatey(-18vw) rotate(-16deg);
+                
+                /*----------------------------------- ANIMATION --------------------------------------*/
+                text-indent: -200%;
+                animation: animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
+                animation-delay: calc(var(--animation_duration_left_to_right) * 1.5);
+                
                 @media (min-width: 768px) {
                     transform: none;
                 }
@@ -65,14 +76,25 @@
                 text-underline-offset: -0rem;
                 text-decoration-skip-ink: none;
 
+                /*----------------------------------- ANIMATION --------------------------------------*/
+                text-indent: -200%;
+                animation: animation_text_eccentric_you  var(--animation_duration_text_reveal) ease-in-out forwards,
+                animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
+                animation-delay: calc(var(--animation_duration_left_to_right) * 2.5);
             }
 
             /*--- WANT ---*/
             span:last-child{
                 font-size: var(--want-font-size);
-                text-shadow: 0px -3vw 0px var(--word-want-shadow-color);
                 text-align: left;
                 transform: translatey(-10.8rem);
+
+                /*----------------------------------- ANIMATION --------------------------------------*/
+                text-indent: 200%;
+                animation: animation_text_eccentric_want  var(--animation_duration_text_reveal) ease-in-out forwards,
+                animation_text_slide_in_right var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
+                animation-delay: calc(var(--animation_duration_left_to_right) * 3.4);
+
                 @media (min-width: 768px) {
                     text-align: center;
                 }
@@ -88,26 +110,41 @@
             span:first-child::before{
                 left: -5rem;
                 z-index: -1;
-                height: calc(var(--base-font-size) * 2);  /* Calc based on font-size, determines the background box sizing */
+                height: calc(var(--base-font-size) * 5);  /* Calc based on font-size, determines the background box sizing */
                 background-color: var(--heading-block-1-color);
+
+                /*----------------------------------- ANIMATION --------------------------------------*/
+                animation: animation_left_to_right var(--animation_duration_left_to_right) ease-out forwards,         
+                animation_appear 0.01s linear forwards;
             }
 
             span:first-child::after{
+                opacity: 0;
                 top: calc(var(--base-font-size) * .9);
-                height: calc(var(--base-font-size) * 3);
+                height: calc(var(--base-font-size) * 4);
                 z-index: 1;
                 left: -5rem;
                 background-color: var(--heading-block-2-color);
+
+                /*----------------------------------- ANIMATION --------------------------------------*/
+                animation: animation_right_to_left var(--animation_duration_left_to_right) ease-out forwards,         
+                animation_appear 0.01s linear forwards;
+                animation-delay: var(--animation_slide_delay);
             }
 
             span:nth-child(3)::after{
+                opacity: 0;
                 top: calc(var(--you-font-size) * 1);
                 height: calc(var(--you-font-size) * 2);
                 left: -5rem;
                 z-index: -1;
                 background-color: var(--heading-block-3-color);
-            }
 
+                /*----------------------------------- ANIMATION --------------------------------------*/
+                animation: animation_left_to_right var(--animation_duration_left_to_right) ease-out forwards,         
+                animation_appear 0.01s linear forwards;
+                animation-delay: calc(var(--animation_slide_delay) * 4.5);
+            }
 
         }
 
@@ -119,3 +156,4 @@
 
     }
 }
+

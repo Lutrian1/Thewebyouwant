@@ -123,3 +123,122 @@ html{
     
 
 }
+
+/*----------------------------------- all animations --------------------------------------*/
+@layer animations{
+
+/*----------------------------------- all animation variables --------------------------------------*/
+    :root{
+        --cubic-bezier: cubic-bezier(.76,.24,0,1.19);
+
+        --animation_duration_left_to_right: 500ms;
+        --animation_duration_text_reveal: 800ms;
+        --animation_slide_delay: 100ms;
+    }
+
+/*----------------------------------- all animation keyframes (animations themselves) --------------------------------------*/
+
+
+/*--- ANIMATION ON TEXT (NEEDS TO BE TEXT SPECIFIC ELSE IT ALSO INTERACTS WITH THE ::BEFORE BOX, HENCE WHY THE TEXT-SHADOW AND TEXT-INDENT IS USED)---*/
+    @keyframes animation_text_reveal_up_the {
+        0% {
+            text-shadow: 0 100px 0 transparent; 
+        }
+
+        40% {
+            text-shadow: 0 0 0 var(--word-the-color); 
+        }
+
+        80% {
+            text-shadow: 0 0 0 var(--word-the-color); 
+        }
+
+        100% {
+            text-shadow: 0 0 0 transparent; 
+            -webkit-text-fill-color: var(--word-the-color);
+        }
+    }
+
+    @keyframes animation_text_eccentric_you{
+        0% {
+            text-shadow: 0 0 0 transparent; 
+        }
+
+        40% {
+            text-shadow: 0 0 0 var(--word-you-color); 
+        }
+
+        80% {
+            text-shadow: 0 20px 0 var(--color-neutral-800); 
+        }
+
+        100% {
+            text-shadow: 0 0 0 transparent; 
+            -webkit-text-fill-color: var(--word-you-color);
+        }
+    }
+
+    @keyframes animation_text_eccentric_want{
+        0% {
+            text-shadow: 0 0 0 transparent; 
+        }
+
+        40% {
+            text-shadow: 0 0 0 var(--word-want-color); 
+        }
+
+        80% {
+            text-shadow: 0 20px 0 var(--word-want-shadow-color); 
+        }
+
+        100% {
+            text-shadow: 0px -3vw 0px var(--word-want-shadow-color); 
+            -webkit-text-fill-color: var(--word-want-color);
+        }
+    }
+
+    @keyframes animation_text_slide_in_left{
+        from{
+            text-indent: -200%;
+        }
+        to{
+            text-indent: 0;
+        }
+    }
+
+    @keyframes animation_text_slide_in_right{
+        from{
+            text-indent: 200%;
+        }
+        to{
+            text-indent: 0;
+        }
+    }
+
+    @keyframes animation_left_to_right {
+        from{
+            transform: translateX(-100%);
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes animation_right_to_left {
+        from{
+            transform: translateX(100%);
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes animation_appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
