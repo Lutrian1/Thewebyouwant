@@ -1,7 +1,18 @@
-*{
+html,body{
     margin: 0;
     padding: 0;
+    main,footer{
+        padding: var(--grid-gap);
+    }
 }
+
+html{
+    font-family: var(--main-font);
+    background-color: var(--webpage-bg-color);
+    color: var(--fallback-text-color);
+}
+
+
 
 /*----------------------------------- Font faces and bold styles etc. --------------------------------------*/
 @layer font-loading{
@@ -64,9 +75,8 @@
     --word-want-shadow-color: var(--color-neutral-600);
 
     /* background-per-block */
-    --main-block-color: var(--color-neutral-900);
-
     --heading-block-1-color: var(--color-neutral-300);
+    --heading-block-2-color: var(--color-neutral-900);
     --heading-block-3-color: var(--color-neutral-500);
     
     }
@@ -112,16 +122,4 @@
     }
     
 
-}
-
-/*----------------------------------- Cross page styling --------------------------------------*/
-
-html{
-    font-family: var(--main-font);
-    background-color: var(--webpage-bg-color);
-    color: var(--fallback-text-color);
-}
-
-body{
-    padding: var(--grid-gap);
 }

@@ -1,5 +1,9 @@
 :root{
     --heading-height: 33.24rem;
+    /* Add these new variables */
+    --base-font-size: clamp(8.125rem, 20.536vw, 22.5rem);
+    --you-font-size: clamp(9.125rem, 24.107vw, 25rem);
+    --want-font-size: clamp(6.75rem, 17.143vw, 18.75rem);
 }
 /*----------------------------------- All header styling --------------------------------------*/
 
@@ -9,7 +13,10 @@
 
 /*----------------------------------- H1 Styling (No bg-boxes just text and font-sizing) --------------------------------------*/
         h1{
-            font-size: clamp(8.125rem, 20.536vw, 22.5rem);
+            overflow: clip;
+            margin: 0;
+            padding: 0 var(--grid-gap);
+            font-size: var(--base-font-size);
             position: relative;
 
             /*--- ALL WORDS ---*/
@@ -47,7 +54,8 @@
 
             /*--- YOU ---*/
             span:nth-child(3){
-                font-size: clamp(9.125rem, 24.107vw, 25rem);
+                z-index: 5;
+                font-size: var(--you-font-size);
                 color: var(--word-you-color);
                 text-align: center;
                 transform: translatey(-7rem);
@@ -61,7 +69,7 @@
 
             /*--- WANT ---*/
             span:last-child{
-                font-size: clamp(6.75rem, 17.143vw, 18.75rem);
+                font-size: var(--want-font-size);
                 text-shadow: 0px -3vw 0px var(--word-want-shadow-color);
                 text-align: left;
                 transform: translatey(-10.8rem);
@@ -69,46 +77,45 @@
                     text-align: center;
                 }
             }
-            
+
+    /*----------------------------------- background box styling --------------------------------------*/
+            span::before,::after{
+                position: absolute;
+                content: "";
+                width: 200vw;
+            }
+
+            span:first-child::before{
+                left: -5rem;
+                z-index: -1;
+                height: calc(var(--base-font-size) * 2);  /* Calc based on font-size, determines the background box sizing */
+                background-color: var(--heading-block-1-color);
+            }
+
+            span:first-child::after{
+                top: calc(var(--base-font-size) * .9);
+                height: calc(var(--base-font-size) * 3);
+                z-index: 1;
+                left: -5rem;
+                background-color: var(--heading-block-2-color);
+            }
+
+            span:nth-child(3)::after{
+                top: calc(var(--you-font-size) * 1);
+                height: calc(var(--you-font-size) * 2);
+                left: -5rem;
+                z-index: -1;
+                background-color: var(--heading-block-3-color);
+            }
+
+
         }
 
-/*----------------------------------- h1 Styling (No bg-boxes just text and font-sizing) --------------------------------------*/
+        p{
+            z-index: 1;
+            margin: -.7rem 0 0 0;
+            padding: 0 var(--grid-gap); 
+        }
 
-/*
-        .box-backgrounds{
-
-            height: var(--heading-height);
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            *{
-                position: relative;
-            }
-
-            .heading-bg-square-1{
-                background-color: var(--heading-block-1-color);
-                z-index: -3;
-                top: 0;
-                height: 25.1%; 
-
-            }
-
-            .heading-bg-square-2{
-                background-color: var(--main-block-color);
-                z-index: -1;
-                top: 16%; 
-                height: 28%; 
-            }
-
-            .heading-bg-square-3{
-                z-index: -4;
-                background-color: var(--heading-block-3-color);
-                top: 43%; 
-                height: 25%; 
-            }
-
-        } */
     }
 }
