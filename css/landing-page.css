@@ -76,7 +76,7 @@
                 text-indent: -200%;
                 animation: animation_text_eccentric_you  var(--animation_duration_text_reveal) ease-in-out forwards,
                 animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
-                animation-delay: calc(var(--animation_duration_left_to_right) * 2.3);
+                animation-delay: calc(var(--animation_duration_left_to_right) * 2.5);
             }
 
             /*--- WANT ---*/
