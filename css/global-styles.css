@@ -12,6 +12,8 @@ html{
     color: var(--fallback-text-color);
 }
 
+/*----------------------------------- NOISE --------------------------------------*/
+
 body::after {
     content: '';
     z-index: 1000;
