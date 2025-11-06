@@ -74,10 +74,12 @@ body::after {
     /*----------------------------------- Semantic Names --------------------------------------*/
     
     /* Background colors */
-    --webpage-bg-color: var(--color-neutral-1000);
+    --webpage-bg-color: var(--color-neutral-900);
+    --button-bg-color: var(--color-neutral-100);
 
     /* Text colors */
     --fallback-text-color: var(--color-neutral-0);
+    --time-text-color: var(--color-neutral-2000);
 
     /* Words in h1*/
     --word-the-color: var(--color-neutral-2000);
@@ -88,6 +90,8 @@ body::after {
     --heading-block-1-color: var(--color-neutral-300);
     --heading-block-2-color: var(--color-neutral-900);
     --heading-block-3-color: var(--color-neutral-500);
+
+    --time--block-background-color: var(--color-neutral-300);
     
     }
 
@@ -143,7 +147,14 @@ body::after {
 
         --animation_duration_left_to_right: 500ms;
         --animation_duration_text_reveal: 800ms;
+        --animation_text_bounce_out_duartion: 1500ms;
+
         --animation_slide_delay: 100ms;
+
+        --secondary-text-shadow-color: var(--color-neutral-700);
+        --tertiary-text-shadow-color: var(--color-neutral-600);
+        --quaternary-text-shadow-color: var(--color-neutral-500);
+        --quinary-text-shadow-color: var(--color-neutral-400);
     }
 
 /*----------------------------------- all animation keyframes (animations themselves) --------------------------------------*/
@@ -152,7 +163,7 @@ body::after {
 /*--- ANIMATION ON TEXT (NEEDS TO BE TEXT SPECIFIC ELSE IT ALSO INTERACTS WITH THE ::BEFORE BOX, HENCE WHY THE TEXT-SHADOW AND TEXT-INDENT IS USED)---*/
     @keyframes animation_text_reveal_up_the {
         0% {
-            text-shadow: 0 100px 0 transparent; 
+            text-shadow: 0 6.25rem 0 transparent; 
         }
 
         40% {
@@ -183,7 +194,7 @@ body::after {
         }
 
         80% {
-            text-shadow: 0 20px 0 var(--color-neutral-800); 
+            text-shadow: 0 1.25rem 0 var(--color-neutral-800); 
         }
 
         100% {
@@ -207,11 +218,11 @@ body::after {
         }
 
         80% {
-            text-shadow: 0 20px 0 var(--word-want-shadow-color); 
+            text-shadow: 0 1.25rem 0 var(--word-want-shadow-color); 
         }
 
         100% {
-            text-shadow: 0px -3vw 0px var(--word-want-shadow-color); 
+            text-shadow: 0rem -3vw 0rem var(--word-want-shadow-color); 
             -webkit-text-fill-color: var(--word-want-color);
         }
     }
@@ -231,6 +242,64 @@ body::after {
         }
         to{
             text-indent: 0;
+        }
+    }
+
+    @keyframes animation_text_bounce_out {
+
+        0%{
+            text-shadow: 0 6.25rem 0 transparent; 
+        }
+
+        10%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color);
+        }
+
+        20%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color),
+            3.125rem 3.125rem 0 var(--tertiary-text-shadow-color);
+        }
+
+        30%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color),
+            3.125rem 3.125rem 0 var(--tertiary-text-shadow-color), 0.563rem 0.563rem var(--quaternary-text-shadow-color);
+        }
+
+        40%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color),
+            3.125rem 3.125rem 0 var(--tertiary-text-shadow-color), 0.563rem 0.563rem var(--quaternary-text-shadow-color),
+            4.688rem 4.688rem 0 var(--quinary-text-shadow-color);
+        }
+
+        50%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color),
+            3.125rem 3.125rem 0 var(--tertiary-text-shadow-color), 0.563rem 0.563rem var(--quaternary-text-shadow-color),
+            4.688rem 4.688rem 0 var(--quinary-text-shadow-color);
+        }
+
+        60%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color),
+            3.125rem 3.125rem 0 var(--tertiary-text-shadow-color), 0.563rem 0.563rem var(--quaternary-text-shadow-color),
+            4.688rem 4.688rem 0 var(--quinary-text-shadow-color);
+        }
+
+        70%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color),
+            3.125rem 3.125rem 0 var(--tertiary-text-shadow-color), 0.563rem 0.563rem var(--quaternary-text-shadow-color);
+        }
+
+        80%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color),
+            3.125rem 3.125rem 0 var(--tertiary-text-shadow-color);
+        }
+
+        90%{
+            text-shadow: 1.563rem 1.563rem 0 var(--secondary-text-shadow-color);
+        }
+
+        100%{
+            text-shadow: 0px -3vw 0px var(--word-want-shadow-color); 
+            -webkit-text-fill-color: var(--word-want-color);
         }
     }
 

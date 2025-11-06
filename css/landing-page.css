@@ -4,6 +4,8 @@
     --base-font-size: clamp(8.125rem, 20.536vw, 22.5rem);
     --you-font-size: clamp(9.125rem, 24.107vw, 25rem);
     --want-font-size: clamp(6.75rem, 17.143vw, 18.75rem);
+
+    --paragraph-font-size: clamp(1.5rem, 3.528vw, 5rem);
 }
 /*----------------------------------- All header styling --------------------------------------*/
 
@@ -36,7 +38,7 @@
                     }
                 }
 
-        /*----------------------------------- *THE --------------------------------------*/
+        /*----------------------------------- *THE* --------------------------------------*/
 
             span:first-child{
                 color: var(--word-the-color);
@@ -54,7 +56,7 @@
 
             span:nth-child(2){
                 text-align: left;
-                transform: translatex(10px) translatey(-18vw) rotate(-16deg);
+                transform: translatex(0.625rem) translatey(-18vw) rotate(-16deg);
                 
                 /*----------------------------------- ANIMATION --------------------------------------*/
                 text-indent: -200%;
@@ -62,7 +64,7 @@
                 animation-delay: calc(var(--animation_duration_left_to_right) * 1.6);
                 
                 @media (min-width: 768px) {
-                    transform: none;
+                    transform: translatex(0rem) translatey(3.2vw) rotate(0deg);
                 }
             }
 
@@ -73,10 +75,11 @@
                 font-size: var(--you-font-size);
                 color: var(--word-you-color);
                 text-align: center;
+                text-transform: uppercase;
                 transform: translatey(-7rem);
 
                 /*----------------------------------- ANIMATION --------------------------------------*/
-                text-indent: -200%;
+                text-indent: -300%;
                 animation: animation_text_eccentric_you  var(--animation_duration_text_reveal) ease-in-out forwards,
                 animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
                 animation-delay: calc(var(--animation_duration_left_to_right) * 2.5);
@@ -91,8 +94,9 @@
 
                 /*----------------------------------- ANIMATION --------------------------------------*/
                 text-indent: 200%;
-                animation: animation_text_eccentric_want  var(--animation_duration_text_reveal) ease-in-out forwards,
-                animation_text_slide_in_right var(--animation_duration_text_reveal) ease-in-out forwards;
+                animation: animation_text_eccentric_want  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
+                animation_text_slide_in_right var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
+                animation_text_bounce_out var(--animation_text_bounce_out_duartion) ease-in-out forwards;
                 animation-delay: calc(var(--animation_duration_left_to_right) * 3.2);
 
                 @media (min-width: 768px) {
@@ -155,12 +159,37 @@
 
         }
 
-        p{
+        p:first-of-type{
             z-index: 1;
-            margin: -.7rem 0 0 0;
+            margin: -1.05rem 0 0 0;
             padding: 0 var(--grid-gap); 
+
+            @media (min-width: 768px) {
+                margin: -3rem 0 0 0;
+            }
+
+        }
+
+        a{
+            background-color: var(--button-bg-color);
+            text-decoration: none;
+            color: var(--fallback-text-color);
+            padding: 1rem .5rem 1rem .5rem;
+            margin: var(--grid-gap);
+            width: 5rem;
+            height: 2rem;
+        }
+
+        p > time{
+            color: var(--time-text-color);
+            background-color: var(--time--block-background-color);
         }
 
     }
+
+}
+
+p{
+    font-size: var(--paragraph-font-size);
 }
 
