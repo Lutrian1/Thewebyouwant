@@ -85,7 +85,7 @@
 
                 /*----------------------------------- ANIMATION --------------------------------------*/
                 animation: animation_text_eccentric_you  var(--animation_duration_text_reveal) ease-in-out forwards;
-                animation-delay: calc(var(--animation_duration_left_to_right) * 2.5);
+                animation-delay: calc(var(--animation_duration_left_to_right) * 3);
             }
 
         /*----------------------------------- *WANT* --------------------------------------*/
@@ -102,7 +102,7 @@
                 animation: animation_text_eccentric_want  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
                  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
                 animation_text_bounce_out var(--animation_text_bounce_out_duartion) ease-in-out forwards;
-                animation-delay: calc(var(--animation_duration_left_to_right) * 3.2);
+                animation-delay: calc(var(--animation_duration_left_to_right) * 3.7);
 
                 @media (min-width: 768px) {
                     text-align: center;
