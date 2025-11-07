@@ -170,6 +170,8 @@
         /*----------------------------------- Paragraph Inside heading styling --------------------------------------*/
 
         p:first-of-type{
+            font-style: italic;
+            font-weight: normal;
             z-index: 1;
             margin: -1.05rem 0 0 0;
             padding: 0 var(--grid-gap); 
@@ -252,7 +254,6 @@
 
         /*----------------------------------- *WAS* --------------------------------------*/
 
-
             span:nth-child(3){
                 font-size: var(--was-font-size);
                 color: var(--word-if-and-was-color);
@@ -267,6 +268,36 @@
                     writing-mode: horizontal-tb;
                 }
             }
+
+         /*----------------------------------- *UP TO* --------------------------------------*/
+
+            span:nth-child(4){
+                margin-top: 3rem;
+            }
+
+            span:nth-child(4), span:last-child{
+                text-transform: uppercase;
+                text-align: center;
+            }
+            
+         /*----------------------------------- *YOU* --------------------------------------*/
+
+            span:last-child{
+                text-transform: uppercase;
+                text-align: center;
+                font-size: var(--you-font-size);
+                font-weight: lighter;
+                margin-top: -4rem;
+
+                -webkit-text-fill-color: var(--word-you-color-variation-2);
+
+                text-decoration-line: underline;
+                text-decoration-thickness: 20%;
+                text-underline-offset: -0rem;
+                text-decoration-skip-ink: none;
+
+            }
+
 
         /*----------------------------------- Background box styling --------------------------------------*/
 
