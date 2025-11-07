@@ -7,6 +7,7 @@
 
     --h2-important-font-size: clamp(8.125rem, 20.536vw, 18.75rem);
     --was-font-size: clamp(9.375rem, 28.694vw, 40.25rem);
+    --up-to-font-size: clamp(7.5rem, 17.143vw, 17rem);
 
     --paragraph-font-size: clamp(1.5rem, 3.528vw, 5rem);
     --h2-font-size: clamp(2.5rem, 6.318vw, 6rem);
@@ -272,7 +273,12 @@
          /*----------------------------------- *UP TO* --------------------------------------*/
 
             span:nth-child(4){
+                font-size: calc(var(--up-to-font-size) * .7);
                 margin-top: 3rem;
+
+                @media (min-width: 425px) {
+                    font-size: var(--up-to-font-size);
+                }
             }
 
             span:nth-child(4), span:last-child{
@@ -289,7 +295,7 @@
                 font-weight: lighter;
                 margin-top: -4rem;
 
-                -webkit-text-fill-color: var(--word-you-color-variation-2);
+                color: var(--word-you-color-variation-2);
 
                 text-decoration-line: underline;
                 text-decoration-thickness: 20%;
