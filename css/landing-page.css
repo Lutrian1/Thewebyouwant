@@ -43,6 +43,7 @@
         /*----------------------------------- *THE* --------------------------------------*/
 
             span:first-child{
+                text-transform: lowercase;
                 color: var(--word-the-color);
                 position: relative;
                 z-index: -2;
@@ -57,11 +58,13 @@
         /*----------------------------------- *WEB* --------------------------------------*/
 
             span:nth-child(2){
+                text-transform: capitalize;
                 text-align: left;
                 transform: translatex(0.625rem) translatey(-18vw) rotate(-16deg);
                 
                 /*----------------------------------- ANIMATION --------------------------------------*/
-                text-indent: -200%;
+                text-indent: -300%;
+                -webkit-text-indent: -300%;
                 animation: animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
                 animation-delay: calc(var(--animation_duration_left_to_right) * 1.6);
                 
@@ -82,6 +85,7 @@
 
                 /*----------------------------------- ANIMATION --------------------------------------*/
                 text-indent: -300%;
+                -webkit-text-indent: -300%;
                 animation: animation_text_eccentric_you  var(--animation_duration_text_reveal) ease-in-out forwards,
                 animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
                 animation-delay: calc(var(--animation_duration_left_to_right) * 2.5);
@@ -92,10 +96,12 @@
             span:last-child{
                 font-size: var(--want-font-size);
                 text-align: left;
+                text-transform: capitalize;
                 transform: translatey(-10.8rem);
 
                 /*----------------------------------- ANIMATION --------------------------------------*/
                 text-indent: 200%;
+                -webkit-text-indent: 200%;
                 animation: animation_text_eccentric_want  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
                 animation_text_slide_in_right var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
                 animation_text_bounce_out var(--animation_text_bounce_out_duartion) ease-in-out forwards;
