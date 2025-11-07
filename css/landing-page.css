@@ -325,10 +325,14 @@
 
             /*----------------------------------- BOX 2 (BEHIND IT) --------------------------------------*/
 
-            span:nth-child(2)::before{
-                z-index: -2;
+            span:first-child::after{
+                z-index: 1;
                 height: calc(var(--h2-important-font-size) * 1);
+                top: calc(var(--h2-important-font-size) * .9);
                 background-color: var(--block-5-color);
+                @media (min-width: 1330px) {
+                    top: calc(var(--h2-important-font-size) * .831);
+                }
             }
 
             /*----------------------------------- BOX 3 (AFTER IT) --------------------------------------*/
@@ -339,7 +343,6 @@
                 z-index: -1;
                 height: calc(var(--h2-important-font-size) * .7);
                 background-color: var(--heading-block-3-color);
-
           
             }
 
@@ -347,11 +350,11 @@
 
         p:nth-of-type(2){
             display: grid;
-            grid-template-columns: subgrid;
             grid-column: 2 / -1;
-            padding: 0;
+            padding: 0 var(--grid-gap) 0 0;
             margin: 0;
         }
+
     }
 }
 

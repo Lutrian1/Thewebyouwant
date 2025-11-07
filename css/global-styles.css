@@ -107,14 +107,13 @@ body::after {
 @layer grid{
 
     :root {
-       	--grid-columns: repeat(6, 1fr);
+        --grid-columns: repeat(18, 1fr);
         --grid-gap: 1.25rem;
     }
 
     @media (min-width: 1024px) {
 
         :root {
-            --grid-columns: repeat(18, 1fr);
             --grid-gap: 1.5rem;
         }
 
