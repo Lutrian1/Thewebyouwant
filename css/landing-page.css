@@ -1,11 +1,12 @@
 :root{
     --heading-height: 33.24rem;
-    /* Add these new variables */
+
     --base-font-size: clamp(8.125rem, 20.536vw, 22.5rem);
     --you-font-size: clamp(9.125rem, 24.107vw, 25rem);
     --want-font-size: clamp(6.75rem, 17.143vw, 18.75rem);
 
     --paragraph-font-size: clamp(1.5rem, 3.528vw, 5rem);
+    --h2-font-size: clamp(2.5rem, 6.318vw, 6rem);
 }
 /*----------------------------------- All header styling --------------------------------------*/
 
@@ -22,15 +23,16 @@
             position: relative;
 
             /*--- ALL WORDS ---*/
-            & > span {
+            span {
                 display: grid;
                 grid-template-columns: subgrid;
                 grid-column: 1 / -1;
+
             }
 
                 @media (min-width: 768px) {
-                    & > span:first-child,
-                    & > span:nth-child(2) {
+                    span:first-child,
+                    span:nth-child(2) {
                         display: inline-block;
                         grid-template-columns: none;
                         width: auto;
@@ -159,6 +161,8 @@
 
         }
 
+        /*----------------------------------- Paragraph Inside heading styling --------------------------------------*/
+
         p:first-of-type{
             z-index: 1;
             margin: -1.05rem 0 0 0;
@@ -169,6 +173,13 @@
             }
 
         }
+        
+        p > time{
+            color: var(--time-text-color);
+            background-color: var(--time--block-background-color);
+        }
+
+        /*----------------------------------- 'Get tickets!'Button --------------------------------------*/
 
         a{
             background-color: var(--button-bg-color);
@@ -180,13 +191,18 @@
             height: 2rem;
         }
 
-        p > time{
-            color: var(--time-text-color);
-            background-color: var(--time--block-background-color);
-        }
-
     }
 
+}
+
+/*----------------------------------- All main styling --------------------------------------*/
+
+@layer main{
+    main{
+        h2{
+            font-size: var(--h2-font-size);
+        }
+    }
 }
 
 p{
