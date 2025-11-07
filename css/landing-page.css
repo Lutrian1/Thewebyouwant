@@ -239,13 +239,13 @@
         /*----------------------------------- *IT* --------------------------------------*/
 
             span:nth-child(2){
-                margin-top: calc(var(--h2-important-font-size) * -.309);
-                text-indent: calc(var(--grid-gap) * 2.3);
+                margin-top: calc(var(--h2-important-font-size) * -.308);
+                padding-left: calc(var(--grid-gap) * 2.3);
                 position: relative;
 
                 @media (min-width: 1340px) {
                     margin-top: calc(var(--h2-important-font-size) * -.368);
-                    text-indent: 10vw;
+                    padding-left: 10vw;
                 }
 
             }
