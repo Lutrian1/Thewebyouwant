@@ -5,6 +5,9 @@
     --you-font-size: clamp(9.125rem, 24.107vw, 25rem);
     --want-font-size: clamp(6.75rem, 17.143vw, 18.75rem);
 
+    --h2-important-font-size: clamp(8.125rem, 20.536vw, 18.75rem);
+    --was-font-size: clamp(9.375rem, 28.694vw, 40.25rem);
+
     --paragraph-font-size: clamp(1.5rem, 3.528vw, 5rem);
     --h2-font-size: clamp(2.5rem, 6.318vw, 6rem);
 }
@@ -170,6 +173,7 @@
             z-index: 1;
             margin: -1.05rem 0 0 0;
             padding: 0 var(--grid-gap); 
+            
 
             @media (min-width: 768px) {
                 margin: -3rem 0 0 0;
@@ -200,10 +204,108 @@
 
 /*----------------------------------- All main styling --------------------------------------*/
 
-@layer main{
+@layer main-content{
+
     main{
+
         h2{
             font-size: var(--h2-font-size);
+            position: relative;
+            overflow: clip;
+            margin: 0;
+            padding: 0 var(--grid-gap);
+
+            /*--- ALL WORDS ---*/
+            span{
+                font-size: var(--h2-important-font-size);
+            }
+
+            span:first-child, span:nth-child(2), span:nth-child(4), span:last-child {
+                display: grid;
+                grid-template-columns: subgrid;
+                grid-column: 1 / -1;
+
+            }
+
+        /*----------------------------------- *IF* --------------------------------------*/
+
+            span:first-child{
+                margin-top: calc(var(--h2-important-font-size) * -.144);
+                color: var(--word-if-and-was-color);
+                position: relative;
+                z-index: -2;
+            }
+
+        /*----------------------------------- *IT* --------------------------------------*/
+
+            span:nth-child(2){
+                margin-top: calc(var(--h2-important-font-size) * -.309);
+                text-indent: calc(var(--grid-gap) * 2.3);
+                position: relative;
+
+                @media (min-width: 1340px) {
+                    margin-top: calc(var(--h2-important-font-size) * -.368);
+                    text-indent: 10vw;
+                }
+
+            }
+
+        /*----------------------------------- *WAS* --------------------------------------*/
+
+
+            span:nth-child(3){
+                font-size: var(--was-font-size);
+                color: var(--word-if-and-was-color);
+                position: absolute;
+                writing-mode: vertical-rl;
+                text-orientation: sideways-right;
+                right: 0;
+                top: calc(var(--h2-font-size) * 2 );
+
+                @media (min-width: 600px) {
+                    right: calc(var(--grid-gap) * 5);
+                    writing-mode: horizontal-tb;
+                }
+            }
+
+        /*----------------------------------- Background box styling --------------------------------------*/
+
+            span::before,::after{
+                position: absolute;
+                content: "";
+                width: 200vw;
+            }
+            
+            /*----------------------------------- BOX 1 (BEHIND IF) --------------------------------------*/
+
+            span:first-child::before{
+                left: -5rem;
+                z-index: -3;
+                height: calc(var(--h2-important-font-size) * .9);  /* Calc based on font-size, determines the background box sizing */
+                max-height: 15.6rem;
+                background-color: var(--block-4-color);
+            }
+
+            /*----------------------------------- BOX 2 (BEHIND IT) --------------------------------------*/
+
+            span:nth-child(2)::before{
+                z-index: -2;
+                height: calc(var(--h2-important-font-size) * 1);
+                background-color: var(--block-5-color);
+            }
+
+            /*----------------------------------- BOX 3 (AFTER IT) --------------------------------------*/
+
+            span:nth-child(2)::after{
+                margin-left: calc(var(--grid-gap) * 3);
+                top: calc(var(--h2-important-font-size) * 1);
+                z-index: -1;
+                height: calc(var(--h2-important-font-size) * .7);
+                background-color: var(--heading-block-3-color);
+
+          
+            }
+
         }
     }
 }

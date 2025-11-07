@@ -1,7 +1,7 @@
 html,body{
     margin: 0;
     padding: 0;
-    main,footer{
+    main > p, section,footer{
         padding: var(--grid-gap);
     }
 }
@@ -62,6 +62,7 @@ body::after {
     /* Neutral Color Scale (Red-ish) */
 
     --color-neutral-400: #F22667; /* Medium-Dark Accent */
+    --color-neutral-450: #F52614; /* Hard red accent */
     --color-neutral-500: #ED0E55; /* Brand/Dark Accent */
     --color-neutral-600: #D90D4E; /* Dark Accent */
     --color-neutral-700: #A40A3B; /* Darker Accent */
@@ -83,6 +84,7 @@ body::after {
 
     /* Words in h1*/
     --word-the-color: var(--color-neutral-2000);
+    --word-if-and-was-color: var(--color-neutral-2000);
     --word-you-color: var(--color-neutral-100);
     --word-want-shadow-color: var(--color-neutral-600);
 
@@ -90,6 +92,9 @@ body::after {
     --heading-block-1-color: var(--color-neutral-300);
     --heading-block-2-color: var(--color-neutral-900);
     --heading-block-3-color: var(--color-neutral-500);
+
+    --block-4-color: var(--color-neutral-200);
+    --block-5-color: var(--color-neutral-450);
 
     --time--block-background-color: var(--color-neutral-300);
     
