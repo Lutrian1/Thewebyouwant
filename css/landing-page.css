@@ -63,8 +63,7 @@
                 transform: translatex(0.625rem) translatey(-18vw) rotate(-16deg);
                 
                 /*----------------------------------- ANIMATION --------------------------------------*/
-                text-indent: -300%;
-                -webkit-text-indent: -300%;
+                -webkit-text-fill-color: transparent;
                 animation: animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
                 animation-delay: calc(var(--animation_duration_left_to_right) * 1.6);
                 
@@ -81,13 +80,11 @@
                 color: var(--word-you-color);
                 text-align: center;
                 text-transform: uppercase;
+                -webkit-text-fill-color: transparent;
                 transform: translatey(-7rem);
 
                 /*----------------------------------- ANIMATION --------------------------------------*/
-                text-indent: -300%;
-                -webkit-text-indent: -300%;
-                animation: animation_text_eccentric_you  var(--animation_duration_text_reveal) ease-in-out forwards,
-                animation_text_slide_in_left  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards;
+                animation: animation_text_eccentric_you  var(--animation_duration_text_reveal) ease-in-out forwards;
                 animation-delay: calc(var(--animation_duration_left_to_right) * 2.5);
             }
 
@@ -99,11 +96,11 @@
                 text-transform: capitalize;
                 transform: translatey(-10.8rem);
 
+
                 /*----------------------------------- ANIMATION --------------------------------------*/
-                text-indent: 200%;
-                -webkit-text-indent: 200%;
+                -webkit-text-fill-color: transparent;
                 animation: animation_text_eccentric_want  var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
-                animation_text_slide_in_right var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
+                 var(--animation_duration_text_reveal) var(--cubic-bezier) forwards,
                 animation_text_bounce_out var(--animation_text_bounce_out_duartion) ease-in-out forwards;
                 animation-delay: calc(var(--animation_duration_left_to_right) * 3.2);
 

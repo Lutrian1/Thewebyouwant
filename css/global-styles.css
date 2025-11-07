@@ -229,19 +229,20 @@ body::after {
 
     @keyframes animation_text_slide_in_left{
         from{
-            text-indent: -200%;
+            margin-left: -200%;
         }
         to{
-            text-indent: 0;
+            margin-left: 0;
+            -webkit-text-fill-color: inherit;
         }
     }
 
     @keyframes animation_text_slide_in_right{
         from{
-            text-indent: 200%;
+            margin-right: 200%;
         }
         to{
-            text-indent: 0;
+            margin-left: 0;
         }
     }
 
