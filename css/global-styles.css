@@ -1,7 +1,7 @@
 html,body{
     margin: 0;
     padding: 0;
-    main > p, section,footer{
+    main > p:first-of-type, section, footer{
         padding: var(--grid-gap);
     }
 }
