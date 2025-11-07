@@ -12,6 +12,16 @@
     --paragraph-font-size: clamp(1.5rem, 3.528vw, 5rem);
     --h2-font-size: clamp(2.5rem, 6.318vw, 6rem);
 }
+
+
+/*----------------------------------- Background box styling --------------------------------------*/
+
+span::before, span::after, p::before, p::after{
+    position: absolute;
+    content: "";
+    width: 200vw;
+}
+
 /*----------------------------------- All header styling --------------------------------------*/
 
 @layer header{
@@ -114,12 +124,6 @@
             }
 
     /*----------------------------------- Background box styling --------------------------------------*/
-
-            span::before,::after{
-                position: absolute;
-                content: "";
-                width: 200vw;
-            }
             
         /*----------------------------------- BOX 1 --------------------------------------*/
 
@@ -215,8 +219,13 @@
             font-size: var(--h2-font-size);
             position: relative;
             overflow: clip;
-            margin: 0;
+            margin: 15vw 0 0 0;
             padding: 0 var(--grid-gap);
+
+            
+            @media (min-width: 768px) {
+                margin: 8vw 0 0 0;
+            }
 
             /*--- ALL WORDS ---*/
             span{
@@ -306,12 +315,6 @@
 
 
         /*----------------------------------- Background box styling --------------------------------------*/
-
-            span::before,::after{
-                position: absolute;
-                content: "";
-                width: 200vw;
-            }
             
             /*----------------------------------- BOX 1 (BEHIND IF) --------------------------------------*/
 
@@ -348,14 +351,48 @@
 
         }
 
-        p:nth-of-type(2){
+        p:first-of-type:not(section p){
+            position: relative;
+
+            &::before{
+                top: -10vw;
+                left: -5rem;
+                z-index: -3;
+                height: calc(100% + 8vw - .1rem);
+                background-color: var(--heading-block-1-color);
+
+                @media (min-width: 768px) {
+                    top: -8vw;
+                    height: calc(100% + 8vw - .2rem);
+                }
+            }
+
+        }
+      
+
+
+        p:nth-of-type(2):not(section p){
             display: grid;
+            position: relative;
             grid-column: 2 / -1;
             padding: 0 var(--grid-gap) 0 0;
             margin: 0;
+
+            &::before{
+                top: -10vw;
+                left: calc(var(--grid-gap) * -1);
+                z-index: -2;
+                height: calc(100% + 10vw);
+                background-color: var(--destinction-block-p-color);
+            }
+
         }
 
     }
+}
+
+main{
+    overflow: clip;
 }
 
 p{

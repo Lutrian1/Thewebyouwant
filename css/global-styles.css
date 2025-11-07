@@ -97,6 +97,8 @@ body::after {
     --block-4-color: var(--color-neutral-200);
     --block-5-color: var(--color-neutral-450);
 
+    --destinction-block-p-color: var(--color-neutral-400);
+
     --time--block-background-color: var(--color-neutral-300);
     
     }
