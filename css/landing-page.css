@@ -191,7 +191,7 @@ span::before, span::after, p::before, p::after{
         
         p > time{
             color: var(--time-text-color);
-            background-color: var(--time--block-background-color);
+            background-color: var(--em-block-background-color);
         }
 
         /*----------------------------------- 'Get tickets!'Button --------------------------------------*/
@@ -405,6 +405,11 @@ span::before, span::after, p::before, p::after{
                 font-size: var(--h3-important-font-size);
                 text-shadow: 0rem -1vw 0rem var(--word-want-shadow-color); 
                 text-decoration: underline;
+            }
+
+            em{
+                color: var(--color-neutral-2000);
+                background-color: var(--em-block-background-color);
             }
             
         }
