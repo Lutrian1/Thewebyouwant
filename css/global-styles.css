@@ -1,6 +1,7 @@
 html,body{
     margin: 0;
     padding: 0;
+    height: var(--body-height);
     main > p:first-of-type, section, footer{
         padding: var(--grid-gap);
     }
@@ -147,7 +148,7 @@ body::after {
 }
 
 /*----------------------------------- all animations --------------------------------------*/
-@layer animations{
+@layer animations-non-scroll-driven{
 
 /*----------------------------------- all animation variables --------------------------------------*/
     :root{
@@ -169,7 +170,7 @@ body::after {
 
 
 /*--- ANIMATION ON TEXT (NEEDS TO BE TEXT SPECIFIC ELSE IT ALSO INTERACTS WITH THE ::BEFORE BOX, HENCE WHY THE TEXT-SHADOW AND TEXT-INDENT IS USED)---*/
-    @keyframes animation_text_reveal_up_the {
+    @keyframes animation_text_reveal_up {
         0% {
             text-shadow: 0 6.25rem 0 transparent; 
         }
@@ -208,6 +209,34 @@ body::after {
         100% {
             text-shadow: 0 0 0 transparent; 
             -webkit-text-fill-color: var(--word-you-color);
+
+            text-decoration-line: underline;
+            text-decoration-thickness: 20%;
+            text-underline-offset: -0rem;
+            text-decoration-skip-ink: none;
+        }
+    }
+
+    @keyframes animation_text_eccentric_you_variation_2{
+        0% {
+            text-shadow: 0 0 0 transparent; 
+            text-decoration-line: underline;
+            text-decoration-thickness: 0%;
+            text-underline-offset: -1rem;
+            text-decoration-skip-ink: none;
+        }
+
+        40% {
+            text-shadow: 0 0 0 var(var(--word-you-color-variation-2)); 
+        }
+
+        80% {
+            text-shadow: 0 1.25rem 0 var(--word-you-color-variation-2); 
+        }
+
+        100% {
+            text-shadow: 0 0 0 transparent; 
+            -webkit-text-fill-color: var(var(--word-you-color-variation-2));
 
             text-decoration-line: underline;
             text-decoration-thickness: 20%;
